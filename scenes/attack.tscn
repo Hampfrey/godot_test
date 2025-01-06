@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckbuk1782car5"]
+
+[ext_resource type="Script" path="res://scenes/attack.gd" id="1_8c046"]
+[ext_resource type="Texture2D" uid="uid://ff7fnn16q0xs" path="res://slam.png" id="2_44f5q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogkq8"]
+size = Vector2(128, 128)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_8c046")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("2_44f5q")
+
+[node name="attack_Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_Area2D"]
+shape = SubResource("RectangleShape2D_ogkq8")
+one_way_collision_margin = 128.0
