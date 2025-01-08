@@ -4,7 +4,7 @@ var target_timer: float = 0
 
 func _process(delta: float) -> void:
 	target_timer = target_timer + 1 * delta
-	if target_timer > 4:
+	if target_timer > 3:
 		target_timer = 0
 		var target = target_scene.instantiate()
 		add_child(target)
