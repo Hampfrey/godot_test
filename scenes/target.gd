@@ -24,26 +24,24 @@ func _process(delta: float) -> void:
 	var collision_info = move_and_collide(true_velocity)
 	
 	if collision_info:
-		#print("\n hit " + collision_info.get_collider().name)
+		print("\n hit " + str(collision_info.get_collider()))
 		velocity = velocity.bounce(collision_info.get_normal())
 		
 		var force = collision_info.get_normal() * true_velocity
 		force = abs(force[0] + force[1])
-		#print(force)
+		print(force)
 		
-		if collision_info.get_collider().name == "borders" or collision_info.get_collider().name == "player":
-			if force > 10:
-				#kill()
-				pass
-		else:
+		if collision_info.get_collider().name != "tilemap" and collision_info.get_collider().name != "player":
 			if lifetime > 5 and collision_info.get_collider().lifetime > 5:
-				print("\n hit " + collision_info.get_collider().name + "   is " + str(name))
-				print(force)
 				if (force) > 10:
 					print(boost)
 					collision_info.get_collider().kill()
 					kill()
 					pass
+		else:
+			if force > 10:
+				#kill()
+				pass
 	if boost > 1:
 		boost = boost / 1.01
 	else:

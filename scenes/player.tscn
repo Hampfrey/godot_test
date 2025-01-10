@@ -1,15 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://b60rsusqk1it7"]
+[gd_scene load_steps=6 format=3 uid="uid://b60rsusqk1it7"]
 
 [ext_resource type="Script" path="res://scenes/player_script.gd" id="1_54tsa"]
 [ext_resource type="Texture2D" uid="uid://cjdcehan88toa" path="res://task_player.png" id="2_5tjib"]
+[ext_resource type="Texture2D" uid="uid://c5mrdtcwmy3yi" path="res://background.png" id="2_aht3p"]
 [ext_resource type="PackedScene" uid="uid://ckbuk1782car5" path="res://scenes/attack.tscn" id="3_sf4su"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bm4w"]
 size = Vector2(128, 128)
 
 [node name="player" type="CharacterBody2D"]
+use_parent_material = true
 motion_mode = 1
 script = ExtResource("1_54tsa")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+use_parent_material = true
+position = Vector2(4, 0)
+
+[node name="filter" type="Sprite2D" parent="Camera2D"]
+z_index = 1
+z_as_relative = false
+use_parent_material = true
+position = Vector2(-4, 0)
+scale = Vector2(39.0938, 23.375)
+texture = ExtResource("2_aht3p")
 
 [node name="player_sprite" type="Sprite2D" parent="."]
 texture_filter = 1

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 var attack_scene: PackedScene = load("res://scenes/attack.tscn")
 @export var speed := 300
+var attack_dist := 128
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,8 +20,8 @@ func movement() -> void:
 	move_and_slide()
 	
 func action() -> void:
-	var mouse_x = get_viewport().get_mouse_position().x
-	var mouse_y = get_viewport().get_mouse_position().y
+	var mouse_x = get_global_mouse_position().x
+	var mouse_y = get_global_mouse_position().y
 	var player_x = self.position.x
 	var player_y = self.position.y
 	
@@ -29,5 +30,5 @@ func action() -> void:
 	if Input.is_action_just_pressed("action"):
 		var attack = attack_scene.instantiate()
 		add_child(attack)
-		attack.position = Vector2(cos(mouse_angle * PI / 180) * -128, sin(mouse_angle * PI / 180) * -128)
+		attack.position = Vector2(cos(mouse_angle * PI / 180) * -attack_dist, sin(mouse_angle * PI / 180) * -attack_dist)
 		#attack.rotation = (mouse_angle - 90) * PI / 180
