@@ -22,7 +22,7 @@ z_index = 1
 z_as_relative = false
 use_parent_material = true
 position = Vector2(-4, 0)
-scale = Vector2(39.0938, 23.375)
+scale = Vector2(67, 41)
 texture = ExtResource("2_aht3p")
 
 [node name="player_sprite" type="Sprite2D" parent="."]

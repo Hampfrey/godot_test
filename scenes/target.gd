@@ -51,6 +51,11 @@ func kill():
 	boost += -3
 	if boost < 7:
 		print(name + " died")
+		var particle_scene: PackedScene = load("res://scenes/particle_controller.tscn")
+		var particle = particle_scene.instantiate()
+		get_parent().add_child(particle)
+		particle.position = position
+		particle.value = true_velocity
 		queue_free()
 	pass
 	
