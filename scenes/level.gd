@@ -1,13 +1,16 @@
 extends Node2D
 var target_scene: PackedScene = load("res://scenes/target.tscn")
 var target_timer: float = 0
+var rate = 6
 
 func _ready() -> void:
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func _process(delta: float) -> void:
 	target_timer = target_timer + 1 * delta
-	if target_timer > 3:
+	rate += -0.0005
+	if target_timer > rate:
+		print("rate " + str(rate))
 		target_timer = 0
 		var target = target_scene.instantiate()
 		add_child(target)

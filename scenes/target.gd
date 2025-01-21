@@ -44,11 +44,12 @@ func _process(delta: float) -> void:
 				pass
 	if boost > 1:
 		boost = boost / 1.01
+		pass
 	else:
 		boost = 1
 
 func kill():
-	boost += -3
+	boost += -2
 	if boost < 7:
 		print(name + " died")
 		var particle_scene: PackedScene = load("res://scenes/particle_controller.tscn")
