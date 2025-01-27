@@ -30,3 +30,17 @@ ENTRIES
     need some game design elements, some kind of basic level should suffice. A few enemies should bounce around and need to be taken out
     also want to add some more puzzle elements
     had an experience where the dvds pushed player out of the map [250121_outside], it was interesting and slightly liminal to follow the blocks as we all moved diagonally accross an infinite plain, where the only way to even see if we were moving was knowing the blocks were moving.
+
+25/01/23
+ g: think about possible puzzles
+    think about more game design
+
+ r: should add larger enemies, maybe some that don't move and require multiple hits
+
+25/01/27
+ g: finish fullscreen mode
+    clean up code
+
+ r: f11 key can now be used to toggle screen
+    broken functions into overrideable "xxx_control" functions, like movement_control, and kill_control [250127_code_restructure]
+    started work on static blocks that can be broken in order to reach new regions

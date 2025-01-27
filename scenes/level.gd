@@ -4,7 +4,7 @@ var target_timer: float = 0
 var rate = 6
 
 func _ready() -> void:
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	pass
 
 func _process(delta: float) -> void:
 	target_timer = target_timer + 1 * delta

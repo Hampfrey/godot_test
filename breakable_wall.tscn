@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://bt2n60qtla2s7"]
+
+[ext_resource type="Script" path="res://breakable_wall.gd" id="1_gedgk"]
+[ext_resource type="Texture2D" uid="uid://bas4yilq0mxuh" path="res://tilemap.png" id="1_wm73r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t873d"]
+size = Vector2(48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yq7d5"]
+size = Vector2(69, 66)
+
+[node name="Node2D" type="StaticBody2D"]
+script = ExtResource("1_gedgk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_wm73r")
+centered = false
+offset = Vector2(-24, -24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_t873d")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_yq7d5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
