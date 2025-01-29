@@ -44,3 +44,9 @@ ENTRIES
  r: f11 key can now be used to toggle screen
     broken functions into overrideable "xxx_control" functions, like movement_control, and kill_control [250127_code_restructure]
     started work on static blocks that can be broken in order to reach new regions
+
+25/01/29
+ g: finish project updates and logs
+
+ r: finsihed project update and log
+    also fixed a crash resulting from the breakable blocks
